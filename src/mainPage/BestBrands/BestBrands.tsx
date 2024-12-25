@@ -1,4 +1,5 @@
 import { Box, Stack, ButtonGroup, Button } from "@mui/material";
+import { blue } from '@mui/material/colors';
 
 const BrandsIcon = [
   `https://dashboard.dcakala.com/public/images/brand/2023/11/Taba-Electronic_medium.webp`,
@@ -26,10 +27,9 @@ export default function BestBrands() {
               color="error"
               sx={{
                 flexGrow: 1, 
-                transition: "background-color 0.3s ease",
                 padding: "16px", 
                 "&:hover": {
-                  backgroundColor: "blue", 
+                  color : 'black'
                 },
               }}
             >
