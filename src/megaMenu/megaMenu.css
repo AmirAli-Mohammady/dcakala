@@ -1,0 +1,16 @@
+.listColumnLeft {
+  position: relative;
+}
+.listHover:hover{
+    color: var(--theme-color);
+}
+.listColumnLeft::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background-color: var(--theme-color);
+  margin-right: 10px;
+}

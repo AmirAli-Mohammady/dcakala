@@ -1,0 +1,66 @@
+
+.css-byrcx0{
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    font-size: 25px;
+    color: #009688;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cart{
+    position: relative;
+    display: inline-flex;
+}
+.css-1rzb3uu{
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    background-color: white;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+.ProfileSvg{
+   background-color: #fff;
+}
+.css-vubbuv{
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: white;
+    font-size: 1.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.phonNum{
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+}
+.css-m1sf21{
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: var(--theme-color);
+    font-size: 1.5rem;
+    color: var(--theme-color);
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    left: 30px;
+    top: 8px;
+}
+.css-18mhvam{
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 17px;
+    margin-left: 4px;
+    fill: #fff;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.seachBar{
+    position: relative;
+    outline: 0;
+    text-align: center;
+    font-size: 15px;
+}

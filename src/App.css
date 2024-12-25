@@ -1,0 +1,16 @@
+:root{
+    font-family: 'dana light' ;
+}
+@font-face {
+    font-family: 'dana light' ;
+    src: url('../public/font/dana\ light.ttf');
+}
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'dana light' ;
+    --theme-color:#ff7900;
+}

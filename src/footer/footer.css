@@ -1,0 +1,14 @@
+.footer-list {
+  list-style-type: disc; 
+  padding-left: 20px;  
+}
+
+.footer-title {
+  font-family: 'Dana Light';  
+}
+
+.footer-text {
+  font-family: 'Dana Light';  
+  line-height: 1.5;           
+}
+
