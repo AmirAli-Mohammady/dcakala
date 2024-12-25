@@ -15,15 +15,14 @@ export const BanerSlider = () => {
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === sliderData.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? sliderData.length - 1 : prevIndex - 1
     );
   };
+  
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderData.length);
+  };  
+  
 
   return (
     <Box sx={{ position: "relative", width: "100%", height: 284 }}>
