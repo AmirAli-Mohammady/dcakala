@@ -17,7 +17,7 @@ function App() {
       {!isSelectedPage && <Header />} 
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route path="cart" element={<CartPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/InstallmentPage" element={<InstallmentPage/>}/>
         <Route path="/takhfif" element={<Takhfif/>}/>
