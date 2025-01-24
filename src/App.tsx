@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Header from "./Header/Header";
 import MainPage from "./mainPage/mainPage";
-import CartPage from "./cart/cart";
+import CartPage from "./cart/CartPage";
 import LoginPage from "./login/login";
 import Takhfif from "./takhfif";
 import Footer from "./footer/footer";

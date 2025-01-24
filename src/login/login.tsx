@@ -13,7 +13,7 @@ const LoginPage: React.FC = () => {
       >
         {/* Logo */}
         <img
-          src="/logo.png" 
+          src="https://www.dcakala.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo2.34a07b94.png&w=256&q=75" 
           alt="Logo"
           style={{ marginBottom: '1rem', width: '120px', height: 'auto' }}
         />
