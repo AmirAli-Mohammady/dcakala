@@ -13,4 +13,6 @@
     box-sizing: border-box;
     font-family: 'dana light' ;
     --theme-color:#ff7900;
+    --title-color:#00bcd4;
+    --border-color:#e5e7eb;
 }
