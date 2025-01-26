@@ -1,8 +1,15 @@
 // import { Link } from "react-router-dom";
 
-import React from "react";
-import Data from "../../public/data";
+import React, { useEffect, useState } from "react";
 import "./megaMenu.css";
+import axios from "axios";
+
+
+interface Item {
+  id: number;
+  title: string;
+  svg: string;
+}
 
 const styles: { [key: string]: React.CSSProperties } = {
   megaMenu: {
@@ -22,16 +29,16 @@ const styles: { [key: string]: React.CSSProperties } = {
     flexWrap: "wrap",
     padding: 0,
     margin: 0,
-    paddingRight: "10px", 
+    paddingRight: "10px",
   },
   listColumn: {
     width: "50%",
     listStyleType: "none",
     display: "flex",
     justifyContent: "space-between",
-    gap: "20px", 
+    gap: "20px",
     paddingRight: "20px",
-    cursor:'pointer',
+    cursor: "pointer",
   },
   imageContainer: {
     flex: "1 1 50%",
@@ -55,6 +62,16 @@ interface Props {
 }
 
 const MegaMenu = (props: Props) => {
+  const [items, setItems] = useState<Item[]>([]);
+  useEffect(
+    function () {
+      axios.get(`http://localhost:9000/fiter`).then((res) => {
+        const Data = res.data;
+        setItems(Data);
+      });
+    },
+    [setItems]
+  );
   return (
     <div style={styles.megaMenu} className={props.className}>
       <h3
@@ -70,11 +87,11 @@ const MegaMenu = (props: Props) => {
       </h3>
       <div className="container d-flex">
         <ul className="listContainer" style={styles.listContainer}>
-          {Data.map((data, index) => (
+          {items.map((data, index) => (
             <li
               key={index}
               style={styles.listColumn}
-              className={`listHover ${index % 2 !==0 ? "listColumnLeft" : ""}`}
+              className={`listHover ${index % 2 !== 0 ? "listColumnLeft" : ""}`}
             >
               <div className="d-flex gap-2">
                 <img src={data.svg} alt={data.title} style={styles.liIcon} />

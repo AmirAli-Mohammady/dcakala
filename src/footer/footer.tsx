@@ -80,7 +80,7 @@ const Footer = () => {
                 <b>{data.firstTitle}</b>
                 <ul className="mt-3">
                   {data.firstlistItem?.map((item) => (
-                    <li className="pb-3 ">{item}</li>
+                    <li className="pb-3 " key ={item.length}>{item}</li>
                   ))}
                 </ul>
               </div>
