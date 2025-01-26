@@ -55,6 +55,7 @@ const Footer = () => {
       </Container>
 
       {/* Second Section */}
+<<<<<<< HEAD
       <Box className="second-section" sx={{ backgroundColor: "#72777A", color: "#fff", py: 4 }}>
         <Container maxWidth="xl">
           <Grid container spacing={4}>
@@ -101,6 +102,61 @@ const Footer = () => {
             </Grid>
           </Grid>
         </Container>
+=======
+      <Box>
+        <Box
+          sx={{
+            backgroundColor: "#72777A",
+            color: "#fff",
+            fontSize: "16px",
+            width: "100%",
+          }}
+          className="secendSection pt-4 pb-4 d-flex justify-content-between"
+        >
+          {img.map((data) => (
+            <Box className="order-4 mt-4 ms-4 pt-4 ">
+              <img src={data.secendImg} alt="" />
+              <img src={data.firstImg} alt="" />
+            </Box>
+          ))}
+          <div className=" first order-3">
+            {foooterSecendSectionData.map((data) => (
+              <div>
+                <b>{data.firstTitle}</b>
+                <ul className="mt-3">
+                  {data.firstlistItem?.map((item) => (
+                    <li className="pb-3 " key ={item.length}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="order-2">
+            {foooterSecendSectionData.map((data) => (
+              <div>
+                <b className="mb-3">{data.secendTitle}</b>
+                <ul className="mt-3">
+                  {data.secendListItem?.map((item) => (
+                    <li className="pb-3">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="order-1 me-5">
+            {foooterSecendSectionData.map((data) => (
+              <div>
+                <b className="pb-3">{data.thirdTitle}</b>
+                <ul className="mt-3">
+                  {data.thirdListItem?.map((item) => (
+                    <li className="pb-3">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Box>
+>>>>>>> b4c232b (finished)
       </Box>
 
       {/* Contact Section */}
