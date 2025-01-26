@@ -7,10 +7,14 @@ import {
 import Header from "./Header/Header";
 import MainPage from "./mainPage/mainPage";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import CartPage from "./cart/CartPage";
 =======
 import CartPage from "./cart/Cart";
 >>>>>>> b839c5e (new pages)
+=======
+import CartPage from "./cart/Cart";
+>>>>>>> main
 import LoginPage from "./login/login";
 import GiftCard from "./content/GiftCard";
 import Footer from "./footer/footer";
