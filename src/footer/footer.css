@@ -1,14 +1,36 @@
 .footer-list {
-  list-style-type: disc; 
-  padding-left: 20px;  
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
 }
 
 .footer-title {
-  font-family: 'Dana Light';  
+  font-family: 'Dana Light';
 }
 
 .footer-text {
-  font-family: 'Dana Light';  
-  line-height: 1.5;           
+  font-family: 'Dana Light';
+  line-height: 1.5;
 }
 
+.second-section {
+  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .footer-list {
+    padding-left: 10px;
+  }
+
+  .second-section {
+    text-align: center;
+  }
+
+  .footer-title {
+    font-size: 16px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+}

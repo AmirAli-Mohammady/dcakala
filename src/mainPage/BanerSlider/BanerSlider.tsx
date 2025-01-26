@@ -5,6 +5,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { motion } from "framer-motion";
 
 export const BanerSlider = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -14,19 +15,22 @@ export const BanerSlider = () => {
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === sliderData.length - 1 ? 0 : prevIndex + 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + sliderData.length) % sliderData.length);
   };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? sliderData.length - 1 : prevIndex - 1
-    );
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % sliderData.length);
   };
 
   return (
-    <Box sx={{ position: "relative", width: "100%", height: 284 }}>
+    <Box
+      sx={{
+        position: "relative",
+        width: "100%",
+        height: 284,
+        overflow: "hidden", 
+      }}
+    >
       <IconButton
         onClick={handlePrev}
         sx={{
@@ -35,27 +39,56 @@ export const BanerSlider = () => {
           left: "10px",
           transform: "translateY(-50%)",
           color: "#ff7900",
-          height: "50px", 
+          height: "50px",
           width: "50px",
-          zIndex:'99'  
+          zIndex: 99,
+          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          display: { xs: "none", sm: "flex" },
+          justifyContent: "center",
+          alignItems: "center",
+          "&:hover": {
+            backgroundColor: "rgba(255, 121, 0, 0.9)",
+          },
         }}
       >
-        <ChevronLeftIcon sx={{ fontSize: 120 }} /> 
+        <ChevronLeftIcon sx={{ fontSize: 48 }} />
       </IconButton>
 
-      <ImageListItem key={sliderData[currentIndex].id}>
-        <img
-          src={`${sliderData[currentIndex].imgUrl}?w=800&h=284&fit=crop&auto=format`}
-          alt={`Slide ${currentIndex + 1}`}
-          loading="lazy"
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <motion.div
+          key={sliderData[currentIndex].id}
+          initial={{ x: -100 }}
+          animate={{ x: 0 }}
+          exit={{ x: 100 }}
+          transition={{ duration: 0.7 }}
           style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
             width: "100%",
             height: "100%",
-            objectFit: "cover",
           }}
-        />
-      </ImageListItem>
-
+        >
+          <ImageListItem>
+            <img
+              src={`${sliderData[currentIndex].imgUrl}?w=800&h=284&fit=crop&auto=format`}
+              alt={`Slide ${currentIndex + 1}`}
+              loading="lazy"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+              }}
+            />
+          </ImageListItem>
+        </motion.div>
+      </Box>
       <IconButton
         onClick={handleNext}
         sx={{
@@ -64,13 +97,20 @@ export const BanerSlider = () => {
           right: "10px",
           transform: "translateY(-50%)",
           color: "#ff7900",
-          height: "50px", 
-          width: "50px",  
+          height: "50px",
+          width: "50px",
+          zIndex: 99,
+          backgroundColor: "rgba(255, 255, 255, 0.8)", 
+          display: { xs: "none", sm: "flex" }, 
+          justifyContent: "center",
+          alignItems: "center",
+          "&:hover": {
+            backgroundColor: "rgba(226, 191, 159, 0.9)",
+          },
         }}
       >
-        <ChevronRightIcon sx={{ fontSize: 120 }} /> 
+        <ChevronRightIcon sx={{ fontSize: 48 }} />
       </IconButton>
-
       <Box
         sx={{
           position: "absolute",
@@ -85,7 +125,6 @@ export const BanerSlider = () => {
           <IconButton
             key={index}
             onClick={() => handleDotClick(index)}
-            onMouseEnter={() => handleDotClick(index)}
             sx={{
               padding: 0,
               color: index === currentIndex ? "white" : "gray",
